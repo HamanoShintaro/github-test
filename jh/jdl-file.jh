@@ -1,0 +1,15 @@
+entity Ingredients  {
+	id Integer,
+    year Integer,
+    month Integer,
+    date Integer,
+    name String,
+    cuisine String,
+    images String,
+    description String,
+    language Language
+}
+
+enum Language {
+    ENGLISH, JAPANESE
+}

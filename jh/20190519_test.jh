@@ -1,0 +1,23 @@
+entity Book {
+	isbn String
+    title String
+    price Integer
+    language Language
+    publishDate Instant
+}
+
+entity Author {
+	name String
+    phoneticName String
+}
+
+enum Language {
+    ENGLISH, JAPANESE
+}
+
+relationship ManyToOne {
+	Book{author(name)} to Author
+}
+
+paginate Book with pagination
+paginate Author with infinite-scroll

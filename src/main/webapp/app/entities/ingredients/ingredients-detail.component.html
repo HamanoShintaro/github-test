@@ -1,0 +1,55 @@
+<div class="row justify-content-center">
+    <div class="col-8">
+        <div *ngIf="ingredients">
+            <h2><span jhiTranslate="newjhip3App.ingredients.detail.title">Ingredients</span> {{ingredients.id}}</h2>
+            <hr>
+            <jhi-alert-error></jhi-alert-error>
+            <dl class="row-md jh-entity-details">
+                <dt><span jhiTranslate="newjhip3App.ingredients.year">Year</span></dt>
+                <dd>
+                    <span>{{ingredients.year}}</span>
+                </dd>
+                <dt><span jhiTranslate="newjhip3App.ingredients.month">Month</span></dt>
+                <dd>
+                    <span>{{ingredients.month}}</span>
+                </dd>
+                <dt><span jhiTranslate="newjhip3App.ingredients.date">Date</span></dt>
+                <dd>
+                    <span>{{ingredients.date}}</span>
+                </dd>
+                <dt><span jhiTranslate="newjhip3App.ingredients.name">Name</span></dt>
+                <dd>
+                    <span>{{ingredients.name}}</span>
+                </dd>
+                <dt><span jhiTranslate="newjhip3App.ingredients.cuisine">Cuisine</span></dt>
+                <dd>
+                    <span>{{ingredients.cuisine}}</span>
+                </dd>
+                <dt><span jhiTranslate="newjhip3App.ingredients.images">Images</span></dt>
+                <dd>
+                    <span>{{ingredients.images}}</span>
+                </dd>
+                <dt><span jhiTranslate="newjhip3App.ingredients.description">Description</span></dt>
+                <dd>
+                    <span>{{ingredients.description}}</span>
+                </dd>
+                <dt><span jhiTranslate="newjhip3App.ingredients.language">Language</span></dt>
+                <dd>
+                    <span jhiTranslate="{{'newjhip3App.Language.' + ingredients.language}}">{{ingredients.language}}</span>
+                </dd>
+            </dl>
+
+            <button type="submit"
+                    (click)="previousState()"
+                    class="btn btn-info">
+                <fa-icon [icon]="'arrow-left'"></fa-icon>&nbsp;<span jhiTranslate="entity.action.back"> Back</span>
+            </button>
+
+            <button type="button"
+                    [routerLink]="['/ingredients', ingredients.id, 'edit']"
+                    class="btn btn-primary">
+                <fa-icon [icon]="'pencil-alt'"></fa-icon>&nbsp;<span jhiTranslate="entity.action.edit"> Edit</span>
+            </button>
+        </div>
+    </div>
+</div>

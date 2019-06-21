@@ -1,0 +1,66 @@
+<div class="row justify-content-center">
+    <div class="col-8">
+        <form name="editForm" role="form" novalidate (ngSubmit)="save()" #editForm="ngForm">
+            <h2 id="jhi-ingredients-heading" jhiTranslate="newjhip3App.ingredients.home.createOrEditLabel">Create or edit a Ingredients</h2>
+            <div>
+                <jhi-alert-error></jhi-alert-error>
+                <div class="form-group" [hidden]="!ingredients.id">
+                    <label for="id" jhiTranslate="global.field.id">ID</label>
+                    <input type="text" class="form-control" id="id" name="id"
+                        [(ngModel)]="ingredients.id" readonly />
+                </div>
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="newjhip3App.ingredients.year" for="field_year">Year</label>
+                    <input type="number" class="form-control" name="year" id="field_year"
+                        [(ngModel)]="ingredients.year" />
+                </div>
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="newjhip3App.ingredients.month" for="field_month">Month</label>
+                    <input type="number" class="form-control" name="month" id="field_month"
+                        [(ngModel)]="ingredients.month" />
+                </div>
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="newjhip3App.ingredients.date" for="field_date">Date</label>
+                    <input type="number" class="form-control" name="date" id="field_date"
+                        [(ngModel)]="ingredients.date" />
+                </div>
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="newjhip3App.ingredients.name" for="field_name">Name</label>
+                    <input type="text" class="form-control" name="name" id="field_name"
+                        [(ngModel)]="ingredients.name" />
+                </div>
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="newjhip3App.ingredients.cuisine" for="field_cuisine">Cuisine</label>
+                    <input type="text" class="form-control" name="cuisine" id="field_cuisine"
+                        [(ngModel)]="ingredients.cuisine" />
+                </div>
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="newjhip3App.ingredients.images" for="field_images">Images</label>
+                    <input type="text" class="form-control" name="images" id="field_images"
+                        [(ngModel)]="ingredients.images" />
+                </div>
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="newjhip3App.ingredients.description" for="field_description">Description</label>
+                    <input type="text" class="form-control" name="description" id="field_description"
+                        [(ngModel)]="ingredients.description" />
+                </div>
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="newjhip3App.ingredients.language" for="field_language">Language</label>
+                    <select class="form-control" name="language" [(ngModel)]="ingredients.language" id="field_language" >
+                        <option value="ENGLISH">{{'newjhip3App.Language.ENGLISH' | translate}}</option>
+                        <option value="JAPANESE">{{'newjhip3App.Language.JAPANESE' | translate}}</option>
+                    </select>
+                </div>
+
+            </div>
+            <div>
+                <button type="button" id="cancel-save" class="btn btn-secondary"  (click)="previousState()">
+                    <fa-icon [icon]="'ban'"></fa-icon>&nbsp;<span jhiTranslate="entity.action.cancel">Cancel</span>
+                </button>
+                <button type="submit" id="save-entity" [disabled]="editForm.form.invalid || isSaving" class="btn btn-primary">
+                    <fa-icon [icon]="'save'"></fa-icon>&nbsp;<span jhiTranslate="entity.action.save">Save</span>
+                </button>
+            </div>
+        </form>
+    </div>
+</div>

@@ -1,7 +1,7 @@
 {
     "home": {
         "title": "今日のオススメ",
-        "subtitle": "This is your homepage",
+        "subtitle": "旬のオススメを紹介します",
         "logged": {
             "message": "You are logged in as user \"{{username}}\"."
         },
